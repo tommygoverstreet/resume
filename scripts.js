@@ -2,6 +2,34 @@
     const $$ = document.querySelectorAll.bind(document);
     const log = console.log;
 
+    /**
+     * Represents a resume with personal information, skills, experience, awards, and education.
+     * @typedef {Object} Resume
+     * @property {string} fName - The first name of the individual.
+     * @property {string} lName - The last name of the individual.
+     * @property {string} name - The full name of the individual.
+     * @property {string} title - The professional title of the individual.
+     * @property {string} location - The location of the individual.
+     * @property {string} phone - The phone number of the individual.
+     * @property {string} email - The email address of the individual.
+     * @property {string} summary - A brief summary of the individual's professional background.
+     * @property {string[]} skills - A list of skills possessed by the individual.
+     * @property {Object[]} experience - A list of work experiences.
+     * @property {string} experience[].title - The job title.
+     * @property {string} experience[].company - The company name.
+     * @property {string} experience[].location - The location of the job.
+     * @property {string} experience[].startDate - The start date of the job.
+     * @property {string} experience[].endDate - The end date of the job.
+     * @property {string} experience[].description - A description of the job responsibilities.
+     * @property {string[]} awards - A list of awards received by the individual.
+     * @property {Object[]} education - A list of educational qualifications.
+     * @property {string} education[].degree - The degree obtained.
+     * @property {string} education[].major - The major or field of study.
+     * @property {string} education[].school - The name of the school.
+     * @property {string} education[].location - The location of the school.
+     * @property {string} education[].startDate - The start date of the education.
+     * @property {string} education[].endDate - The end date of the education.
+     */
     const resume = {
       fName: 'Thomas',
       lName: 'Overstreet',
@@ -19,7 +47,7 @@
           location: 'Oklahoma City, OK',
           startDate: 'MAR 2022',
           endDate: 'Present',
-          description: 'Develop and maintain relationships with customers to drive sales growth. Identify customer needs and provide solutions to meet those needs. Collaborate with internal teams to ensure customer satisfaction and retention. Inspect and examine vehicles to ensure quality and safety standards are met.'
+          description: 'Develop and maintain relationships with customers to drive sales growth. Identify customer needs and provide solutions to meet those needs. Collaborate with internal teams to ensure customer satisfaction and retention. Inspect and examine vehicles to ensure Ryder quality and safety standards are met. Communicate with shop to identify, plan, and schedule maintenance and repairs. Inventory and asset management of up to about 100 vehicles,on site.'
         },
         {
           title: 'Maintenance Manager',
@@ -43,7 +71,7 @@
           location: 'Farmers Branch, TX',
           startDate: 'OCT 2010',
           endDate: 'APR 2012',
-          description: 'Provided exceoptional customer service to rental and lease customers. Assisted in person and over the phone with driver issues, scheduling, and maintenance needs. Coordinated with maintenance team to ensure timely repairs and maintenance. Monitored technician workloads and scheduled repairs for current and future shifts. Assisted with parts procurement and inventory management.'
+          description: 'Provided exceoptional customer service to rental and lease customers for a shop that had over 450 domicile units. Assisted in person and over the phone with driver issues, scheduling, and maintenance needs. Coordinated with maintenance team to ensure timely repairs and maintenance. Monitored technician workloads and scheduled repairs for current and future shifts. Assisted with parts procurement and inventory management.'
         },
         {
           title: 'Light Wheeled Vehicle Mechanic | Soldier',
