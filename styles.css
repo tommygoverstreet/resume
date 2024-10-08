@@ -1,21 +1,167 @@
-body {
-  font-family: Arial, sans-serif;
-}
+  * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
 
-h3 {
-  color: #343a40;
-}
+    body {
+      font-family: Arial, sans-serif;
+      font-size: 0.9rem;
+      line-height: 1.6;
+    }
 
-ul li {
-  margin-bottom: 5px;
-}
+    #resume {
+      max-width: 1200px;
+      min-width: 600px;
+      margin: 0 auto;
+    }
 
-.jumbotron h1 {
-  font-size: 2.5em;
-}
+    p {
+      margin-bottom: 0.15rem;
+    }
 
-@media print {
-  button {
-    display: none;
-  }
-}
+    header {
+      padding: 1rem;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+      margin-bottom: 0.25rem;
+    }
+
+    header .grid-item-1 {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    header .grid-item-2 {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: last baseline;
+    }
+
+    header p {
+      margin-bottom: 0.25rem;
+    }
+
+    header .fa {
+      margin-right: 0.5rem;
+      background-color: #007bff;
+      color: #fff;
+      padding: 0.5rem;
+      border-radius: 50%;
+    }
+
+    main {
+      padding: 1rem;
+       box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
+       width: 100%;
+    }
+
+    ul {
+      list-style: none;
+    }
+
+    .h1,
+    .h2 {
+      margin-bottom: 0.25rem;
+    }
+
+    .h1 {
+      font-size: 2rem;
+      font-weight: bold;
+    }
+
+    .h2 {
+      font-size: 1.25rem;
+      font-weight: bold;
+      margin-bottom: 0.25rem;
+      border-bottom: 2px solid #007bff;
+    }
+
+    .text-primary {
+      color: #007bff;
+    }
+
+    .grid {
+      display: grid;
+      grid-template:
+        'summary experience experience'
+        'education experience experience'
+        'skills experience experience' 
+        'awards experience experience' / 1fr 2fr 1fr;
+
+      gap: 1rem;
+    }
+
+    #summary {
+      grid-area: summary;
+    }
+
+    #experience {
+      grid-area: experience;
+      text-wrap: wrap;
+      padding: 1rem;
+    }
+
+#summary,
+    #education,
+    #skills,
+    #awards {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      height: auto;
+      padding-right: 1rem;
+      padding-top: 1rem;
+    }
+
+    #education {
+      grid-area: education;
+    }
+
+    #skills {
+      grid-area: skills;
+    }
+
+    #awards {
+      grid-area: awards;
+    }
+
+    .exp-item:last-child {
+      margin-bottom: 0;
+    }
+
+    .exp-item {
+      margin-bottom: 1rem;
+    }
+
+    .exp-item h3 {
+      font-size: 1rem;
+      font-weight: bold;
+    }
+
+    .exp-item p {
+      margin-bottom: 0.5rem;
+    }
+
+    .no-print {
+      display: flex;
+      justify-content: center;
+      margin-top: 3rem;
+    }
+
+    .no-print button {
+      margin: 0 0.5rem;
+    }
+
+    @media print {
+      .no-print {
+        display: none;
+      }
+      .badge, .badge-primary {
+      border: none;
+      }
+    }
