@@ -42,10 +42,18 @@
       skills: ['Transportation Management', 'Maintenance Operations', 'Process Optimization', 'Team Leadership', 'Safety Compliance', 'Regulatory Compliance', 'Budget Management', 'Logistics Management', 'Strategic Planning', 'Problem Solving'],
       experience: [
         {
+          title: 'Vehicle Sales Manager',
+          company: 'Ryder Vehicle Sales',
+          location: 'Oklahoma City, OK',
+          startDate: 'FEB 2025',
+          endDate: 'Present',
+          description: 'Develop and maintain relationships with customers to drive sales growth. Identify customer needs and provide solutions to meet those needs. Collaborate with internal teams to ensure customer satisfaction and retention. Inspect and examine vehicles to ensure Ryder quality and safety standards are met. Communicate with shop to identify, plan, and schedule maintenance and repairs. Inventory and asset management of up to about 100 vehicles,on site.'
+        },
+        {
           title: 'Truck Sales Representative',
           company: 'Ryder Vehicle Sales',
           location: 'Oklahoma City, OK',
-          startDate: 'MAR 2022',
+          startDate: 'FEB 2025',
           endDate: 'Present',
           description: 'Develop and maintain relationships with customers to drive sales growth. Identify customer needs and provide solutions to meet those needs. Collaborate with internal teams to ensure customer satisfaction and retention. Inspect and examine vehicles to ensure Ryder quality and safety standards are met. Communicate with shop to identify, plan, and schedule maintenance and repairs. Inventory and asset management of up to about 100 vehicles,on site.'
         },
@@ -166,3 +174,4 @@
       const element = document.getElementById('resume');
       html2pdf(element);
     }
+
