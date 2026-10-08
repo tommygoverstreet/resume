@@ -3,22 +3,22 @@
 
 <head>
   <meta charset="utf-8">
-  <title>Thomas Overstreet Resume</title>
+  <title>Thomas Overstreet — Vehicle Sales Manager | Portfolio & Resume</title>
   <link rel="canonical" href="https://thomas-overstreet.netlify.app" data-dynamic="true">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta name="msapplication-TileColor" content="#0f2a4a">
-  <meta name="description" content="Resume for Thomas Overstreet, Yukon, OK. Vehicle Sales Manager with 20+ years across commercial transportation — from Army mechanic and maintenance leadership to parts and procurement. Now selling class 5-8 trucks at Ryder Vehicle Sales in Oklahoma City." data-dynamic="true">
+  <meta name="description" content="Portfolio and resume of Thomas Overstreet, Yukon, OK. Vehicle Sales Manager with 20+ years across commercial transportation — from Army mechanic and maintenance leadership to parts and procurement. Now selling class 5-8 trucks at Ryder Vehicle Sales in Oklahoma City." data-dynamic="true">
   <meta name="robots" content="index, follow" data-dynamic="true">
-  <meta name="og:description" content="Vehicle Sales Manager with 20+ years across commercial transportation — from Army mechanic and maintenance leadership to parts and procurement. Now selling class 5-8 trucks at Ryder Vehicle Sales in Oklahoma City." data-dynamic="true">
+  <meta name="og:description" content="Vehicle Sales Manager with 20+ years across commercial transportation. Now selling class 5-8 trucks at Ryder Vehicle Sales in Oklahoma City." data-dynamic="true">
   <meta name="og:locale" content="en_US" data-dynamic="true">
-  <meta name="og:site_name" content="Thomas Overstreet Resume" data-dynamic="true">
-  <meta name="og:title" content="Thomas Overstreet resume. Yukon, Oklahoma" data-dynamic="true">
+  <meta name="og:site_name" content="Thomas Overstreet — Portfolio" data-dynamic="true">
+  <meta name="og:title" content="Thomas Overstreet — Vehicle Sales Manager, Oklahoma City" data-dynamic="true">
   <meta name="og:type" content="website" data-dynamic="true">
   <meta name="og:url" content="https://thomas-overstreet.netlify.app" data-dynamic="true">
   <meta name="twitter:card" content="summary" data-dynamic="true">
   <meta name="twitter:description" content="Vehicle Sales Manager with 20+ years across commercial transportation. Now selling class 5-8 trucks at Ryder Vehicle Sales in Oklahoma City." data-dynamic="true">
   <meta name="twitter:site" content="@TommyOstreet" data-dynamic="true">
-  <meta name="twitter:title" content="Thomas Overstreet resume. Yukon, Oklahoma" data-dynamic="true">
+  <meta name="twitter:title" content="Thomas Overstreet — Vehicle Sales Manager" data-dynamic="true">
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -77,31 +77,97 @@
   }
   </script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
-  <link rel="stylesheet" href="vendor/bootstrap.css">
   <link rel="stylesheet" href="styles.css">
   <script src="vendor/html2pdf.js"></script>
 </head>
 
 <body>
-  <!--Container Wrapper-->
-  <div class="container-fluid" id="resume">
-    <div class="header"></div>
-    <main>
-      <div class="grid">
-        <!--Summary-->
-        <section id="summary"></section>
-        <!--Experience-->
-        <section id="experience"></section>
-        <!--Skills-->
-        <section id="skills"></section>
-        <!--Education-->
-        <section id="education"></section>
-        <!--Awards-->
-        <section id="awards"></section>
+  <!-- Sticky nav -->
+  <nav class="site-nav no-print-nav">
+    <a class="nav-brand" href="#top">Thomas <span>Overstreet</span></a>
+    <div class="nav-links">
+      <a href="#about">About</a>
+      <a href="#experience">Experience</a>
+      <a href="#skills">Skills</a>
+      <a href="#service">Service</a>
+      <a href="#contact">Contact</a>
+      <button onclick="downloadResume()" class="nav-cta"><i class="fas fa-file-download"></i>Résumé</button>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <header class="hero" id="top">
+    <div class="hero-inner">
+      <p class="hero-eyebrow"><i class="fas fa-map-marker-alt"></i>Oklahoma City, OK</p>
+      <h1>Thomas <span>Overstreet</span></h1>
+      <p class="hero-tagline">Vehicle Sales Manager · U.S. Army Veteran</p>
+      <p class="hero-intro">20+ years in commercial transportation — now matching fleets with the right class 5–8 trucks at Ryder Vehicle Sales.</p>
+      <div class="hero-ctas">
+        <button onclick="downloadResume()" class="btn btn-primary"><i class="fas fa-file-download"></i>Download Résumé</button>
+        <a href="#contact" class="btn btn-ghost">Get in Touch</a>
       </div>
-      <!--FAQ | Screen only, excluded from print/PDF-->
-      <section id="faq" class="screen-only" aria-label="Frequently asked questions">
-        <h2 class="h2">Frequently Asked Questions</h2>
+      <div class="hero-stats" id="hero-stats"></div>
+    </div>
+  </header>
+
+  <main>
+    <!-- About -->
+    <section id="about" class="section">
+      <div class="wrap">
+        <p class="section-kicker">About</p>
+        <h2 class="section-title">Two decades of trucks, from the shop floor to the sales floor</h2>
+        <div class="about-grid">
+          <p class="about-summary" id="about-summary"></p>
+          <div class="about-facts" id="about-facts"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Experience -->
+    <section id="experience" class="section section-alt">
+      <div class="wrap">
+        <p class="section-kicker">Experience</p>
+        <h2 class="section-title">Career timeline</h2>
+        <div class="timeline" id="experience-timeline"></div>
+      </div>
+    </section>
+
+    <!-- Skills -->
+    <section id="skills" class="section">
+      <div class="wrap">
+        <p class="section-kicker">Skills</p>
+        <h2 class="section-title">What I bring</h2>
+        <div class="skill-chips" id="skills-chips"></div>
+      </div>
+    </section>
+
+    <!-- Military service -->
+    <section id="service" class="section section-dark">
+      <div class="wrap">
+        <p class="section-kicker">Military Service</p>
+        <h2 class="section-title">Proud U.S. Army veteran</h2>
+        <p class="service-summary"><strong>Light Wheeled Vehicle Mechanic (91B)</strong> · Fort Hood, TX · Mar 2005 – Nov 2007<br>Deployed to Iraq, Oct 2006 – Sep 2007</p>
+        <div class="skill-chips" id="service-awards"></div>
+      </div>
+    </section>
+
+    <!-- One-page resume -->
+    <section id="resume-section" class="section">
+      <div class="wrap">
+        <div class="section-head-print-hide">
+          <p class="section-kicker">Résumé</p>
+          <h2 class="section-title">One page, ready to send</h2>
+          <p class="section-sub">This is the print-ready one-page résumé. Use the buttons below — or the bar at the bottom of the page — to print it or save it as a PDF.</p>
+        </div>
+        <div id="resume-sheet" aria-label="One-page resume"></div>
+      </div>
+    </section>
+
+    <!-- FAQ | Screen only, excluded from print/PDF -->
+    <section id="faq" class="section section-alt screen-only" aria-label="Frequently asked questions">
+      <div class="wrap">
+        <p class="section-kicker">FAQ</p>
+        <h2 class="section-title">Frequently asked questions</h2>
         <div class="faq-item">
           <p class="faq-q">What does Thomas Overstreet do?</p>
           <p class="faq-a">Thomas Overstreet is a Vehicle Sales Manager at Ryder Vehicle Sales in Oklahoma City, Oklahoma, where he sells class 5-8 commercial trucks to fleet and business customers.</p>
@@ -126,14 +192,31 @@
           <p class="faq-q">How can I contact Thomas Overstreet?</p>
           <p class="faq-a">By phone at 903-268-3537 or by email at <a href="mailto:tommygoverstreet@gmail.com">tommygoverstreet@gmail.com</a>.</p>
         </div>
-      </section>
-    </main>
-    <!--Action Buttons | DO NOT PRINT-->
-    <div class="no-print">
-      <button onclick="printResume()" class="action-btn btn-print-action"><i class="fas fa-print"></i>Print Resume</button>
-      <button onclick="downloadResume()" class="action-btn btn-download-action"><i class="fas fa-file-download"></i>Download PDF</button>
+      </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact" class="section">
+      <div class="wrap">
+        <p class="section-kicker">Contact</p>
+        <h2 class="section-title">Let's talk trucks</h2>
+        <div class="contact-cards" id="contact-cards"></div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap">
+      <p>© 2026 Thomas Overstreet · Yukon, OK</p>
     </div>
+  </footer>
+
+  <!-- Sticky action bar | DO NOT PRINT -->
+  <div class="no-print sticky-bar">
+    <button onclick="printResume()" class="action-btn btn-print-action"><i class="fas fa-print"></i>Print Résumé</button>
+    <button onclick="downloadResume()" class="action-btn btn-download-action"><i class="fas fa-file-download"></i>Download PDF</button>
   </div>
+
   <script src="scripts.js"></script>
 </body>
 
