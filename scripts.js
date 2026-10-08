@@ -242,6 +242,9 @@ $('#resume-sheet').innerHTML = `
   </div>`;
 
 // ---- Print & PDF ----
+// The Download button needs html2pdf.js v0.10+ (worker API). It is loaded
+// from CDN in index.html. If the library is missing/blocked, we fall back
+// to the print dialog so the user can still save a PDF.
 function printResume() {
   const originalTitle = document.title;
   document.title = 'Thomas Overstreet - Resume';
@@ -250,9 +253,14 @@ function printResume() {
 }
 
 function downloadResume() {
+  const element = document.getElementById('resume-sheet');
+  const done = () => document.documentElement.classList.remove('exporting-pdf');
+  if (typeof html2pdf === 'undefined') { printResume(); return; }
+  let worker;
+  try { worker = html2pdf(); } catch (e) { printResume(); return; }
+  if (!worker || typeof worker.set !== 'function') { printResume(); return; }
   // Export ONLY the one-page resume sheet (not the portfolio)
   document.documentElement.classList.add('exporting-pdf');
-  const element = document.getElementById('resume-sheet');
   const opt = {
     margin: [0.4, 0.45, 0.4, 0.45],
     filename: 'Thomas-Overstreet-Resume.pdf',
@@ -261,6 +269,7 @@ function downloadResume() {
     jsPDF: { unit: 'in', format: 'letter', orientation: 'portrait' },
     pagebreak: { mode: ['css', 'legacy'] }
   };
-  const done = () => document.documentElement.classList.remove('exporting-pdf');
-  html2pdf().set(opt).from(element).save().then(done).catch(done);
+  try {
+    worker.set(opt).from(element).save().then(done).catch(done);
+  } catch (e) { done(); printResume(); }
 }
