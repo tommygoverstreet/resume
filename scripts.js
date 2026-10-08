@@ -195,15 +195,23 @@ const $ = document.querySelector.bind(document);
       setTimeout(() => { document.title = originalTitle; }, 500);
     }
 
-    // Function to download the resume as a PDF
+    // Function to download the resume as a PDF.
+    // Note: this renders the page to an image-based PDF (quick and pretty).
+    // For ATS/recruiter submissions, use Print -> "Save as PDF" instead so the
+    // text stays selectable.
     function downloadResume() {
+      // Hide the action bar and FAQ while the exporter screenshots the DOM
+      document.documentElement.classList.add('exporting-pdf');
       const element = document.getElementById('resume');
       const opt = {
-        margin: [0.4, 0.4, 0.4, 0.4],
+        margin: [0.4, 0.5, 0.4, 0.5],
         filename: 'Thomas-Overstreet-Resume.pdf',
         image: { type: 'jpeg', quality: 0.98 },
-        html2canvas: { scale: 2, useCORS: true },
-        jsPDF: { unit: 'in', format: 'letter', orientation: 'portrait' }
+        html2canvas: { scale: 2, useCORS: true, logging: false },
+        jsPDF: { unit: 'in', format: 'letter', orientation: 'portrait' },
+        // Respect CSS break-inside: avoid so sections aren't sliced mid-item
+        pagebreak: { mode: ['css', 'legacy'] }
       };
-      html2pdf().set(opt).from(element).save();
+      const done = () => document.documentElement.classList.remove('exporting-pdf');
+      html2pdf().set(opt).from(element).save().then(done).catch(done);
     }

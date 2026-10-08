@@ -384,11 +384,18 @@ main {
 }
 
 /* ============ Print ============ */
+@page {
+  size: letter;
+  margin: 0.55in 0.6in;
+}
+
 @media print {
   body {
     background: #fff;
     padding: 0;
-    font-size: 0.85rem;
+    font-size: 0.82rem;
+    line-height: 1.5;
+    color: #111;
   }
 
   #resume {
@@ -397,21 +404,87 @@ main {
     max-width: none;
   }
 
-  .no-print {
-    display: none;
-  }
-
-  .screen-only {
-    display: none;
-  }
-
+  /* Ink-friendly header: never depend on "background graphics" being enabled.
+     White text on a navy gradient goes invisible when backgrounds don't print. */
   .header {
-    -webkit-print-color-adjust: exact;
-    print-color-adjust: exact;
+    background: none !important;
+    padding: 0 0 0.8rem 0;
+    border-bottom: 2.5px solid var(--accent);
+    -webkit-print-color-adjust: economy;
+    print-color-adjust: economy;
   }
 
-  .exp-item,
-  .skill-chip {
+  .header-main .h1 {
+    color: #111;
+    font-size: 1.9rem;
+  }
+
+  .header-main .h1 .text-primary {
+    color: var(--accent-dark);
+  }
+
+  #subHeading {
+    color: #333;
+  }
+
+  .header-contact p,
+  .header-contact a {
+    color: #333;
+  }
+
+  .header-contact .fa,
+  .header-contact .fas {
+    color: var(--accent-dark);
+  }
+
+  main {
+    padding: 1rem 0 0 0;
+  }
+
+  .grid {
+    gap: 1.4rem 1.8rem;
+  }
+
+  .h2 {
+    font-size: 0.78rem;
+    -webkit-print-color-adjust: economy;
+    print-color-adjust: economy;
+  }
+
+  .exp-item {
+    margin-bottom: 1rem;
+    padding-bottom: 0.9rem;
     break-inside: avoid;
   }
+
+  .date-badge,
+  .skill-chip {
+    background: none;
+    border: 1px solid #999;
+    color: #333;
+    -webkit-print-color-adjust: economy;
+    print-color-adjust: economy;
+  }
+
+  .exp-list li::before {
+    background: #333;
+    -webkit-print-color-adjust: economy;
+    print-color-adjust: economy;
+  }
+
+  .no-print,
+  .screen-only {
+    display: none !important;
+  }
+
+  a {
+    color: #333;
+    text-decoration: none;
+  }
+}
+
+/* Hidden while the PDF exporter screenshots the live DOM */
+.exporting-pdf .no-print,
+.exporting-pdf .screen-only {
+  display: none !important;
 }
