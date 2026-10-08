@@ -1,4 +1,4 @@
- const $ = document.querySelector.bind(document);
+const $ = document.querySelector.bind(document);
     const $$ = document.querySelectorAll.bind(document);
     const log = console.log;
 
@@ -20,7 +20,7 @@
      * @property {string} experience[].location - The location of the job.
      * @property {string} experience[].startDate - The start date of the job.
      * @property {string} experience[].endDate - The end date of the job.
-     * @property {string} experience[].description - A description of the job responsibilities.
+     * @property {string[]} experience[].description - Bullet points describing the role.
      * @property {string[]} awards - A list of awards received by the individual.
      * @property {Object[]} education - A list of educational qualifications.
      * @property {string} education[].degree - The degree obtained.
@@ -33,13 +33,13 @@
     const resume = {
       fName: 'Thomas',
       lName: 'Overstreet',
-      name: this.fName + ' ' + this.lName,
-      title: 'Servant Leader | Proud U.S Army Veteran',
+      name: 'Thomas Overstreet',
+      title: 'Servant Leader | Proud U.S. Army Veteran',
       location: 'Yukon, OK',
       phone: '903-268-3537',
       email: 'tommygoverstreet@gmail.com',
-      summary: 'Experienced Transportation Manager with over 20 years of expertise in managing and overseeing maintenance operations. Proven track record of enhancing efficiency, reducing downtime, and optimizing processes to ensure operational excellence.',
-      skills: ['Transportation Management', 'Maintenance Operations', 'Process Optimization', 'Team Leadership', 'Safety Compliance', 'Regulatory Compliance', 'Budget Management', 'Logistics Management', 'Strategic Planning', 'Problem Solving'],
+      summary: 'Vehicle Sales Manager with 20+ years across commercial transportation — from Army mechanic and maintenance leadership to parts and procurement. Now selling class 5-8 trucks at Ryder Vehicle Sales in Oklahoma City, pairing deep product and shop-floor knowledge with relationship-driven selling to match fleets with the right spec.',
+      skills: ['Commercial Vehicle Sales', 'Fleet Relationship Management', 'Negotiation & Closing', 'Class 5-8 Truck Spec\'ing', 'Prospecting & Lead Development', 'Customer Retention', 'Transportation Management', 'Maintenance Operations', 'Team Leadership', 'Safety & Regulatory Compliance', 'Budget Management', 'Process Optimization'],
       experience: [
         {
           title: 'Vehicle Sales Manager',
@@ -47,15 +47,14 @@
           location: 'Oklahoma City, OK',
           startDate: 'FEB 2025',
           endDate: 'Present',
-          description: 'Develop and maintain relationships with customers to drive sales growth. Identify customer needs and provide solutions to meet those needs. Collaborate with internal teams to ensure customer satisfaction and retention. Inspect and examine vehicles to ensure Ryder quality and safety standards are met. Communicate with shop to identify, plan, and schedule maintenance and repairs. Inventory and asset management of up to about 100 vehicles,on site.'
-        },
-        {
-          title: 'Truck Sales Representative',
-          company: 'Ryder Vehicle Sales',
-          location: 'Oklahoma City, OK',
-          startDate: 'FEB 2025',
-          endDate: 'Present',
-          description: 'Develop and maintain relationships with customers to drive sales growth. Identify customer needs and provide solutions to meet those needs. Collaborate with internal teams to ensure customer satisfaction and retention. Inspect and examine vehicles to ensure Ryder quality and safety standards are met. Communicate with shop to identify, plan, and schedule maintenance and repairs. Inventory and asset management of up to about 100 vehicles,on site.'
+          description: [
+            'Build a retail sales network through prospecting, cold calls, walk-ins, sales events, and referral development to drive class 5-8 truck sales',
+            'Pre-sell surplus and incoming inventory to minimize holding time and maximize gains on each unit',
+            'Enforce pricing strategy and promote financing options to shorten time-to-sale',
+            'Partner with the shop and district maintenance to ensure every unit meets Road Ready condition before sale',
+            'Feed market intelligence — local demand, pricing, out-service quality — back to asset management to guide buying and pricing',
+            'Manage roughly 100 units of on-site inventory, including bills of sale, titles, and warranty documentation'
+          ]
         },
         {
           title: 'Maintenance Manager',
@@ -63,7 +62,13 @@
           location: 'Oklahoma City, OK',
           startDate: 'JUN 2020',
           endDate: 'DEC 2021',
-          description: 'Managed daily operations of maintenance and parts departments. Oversaw maintenance of fleet vehicles to ensure compliance with safety and regulatory standards. Developed and implemented maintenance schedules to optimize vehicle performance and reduce downtime. Conducted regular inspections and audits to identify areas for improvement. Reviewed repair orders and invoices to ensure accuracy and compliance with budgetary constraints. Assisted with comparison analytics to determine cost-effective solutions for maintenance, repairs, and new truck purchasing.'
+          description: [
+            'Directed daily operations of the maintenance and parts departments supporting an expedited truckload fleet',
+            'Ran the preventive maintenance program to cut road calls, breakdowns, and equipment downtime',
+            'Controlled shop P&L — labor, parts purchasing, inventory, and outsourced repairs — against budget',
+            'Negotiated vendor contracts and managed warranty claim processing and documentation',
+            'Coached and developed technicians while enforcing DOT/FMCSA and OSHA compliance across the shop'
+          ]
         },
         {
           title: 'Regional Parts and Procurement Manager',
@@ -71,7 +76,13 @@
           location: 'Dallas, TX',
           startDate: 'MAY 2012',
           endDate: 'NOV 2019',
-          description: 'Managed a team of drivers and dispatchers to ensure timely delivery of goods. Developed and implemented strategies to optimize transportation operations and reduce costs. Oversaw maintenance of fleet vehicles to ensure compliance with safety and regulatory standards. Conducted regular inspections and audits to identify areas for improvement. Reviewed repair orders and invoices to ensure accuracy and compliance with budgetary constraints. Assisted with comparison analytics to determine cost-effective solutions for maintenance, repairs, and new truck purchasing.'
+          description: [
+            'Owned regional purchasing strategy for parts and supplies across multiple branches',
+            'Negotiated vendor contracts and managed supplier performance on cost, quality, and on-time delivery',
+            'Drove down excess and dead inventory while keeping branches stocked with the right parts to protect uptime',
+            'Built regional inventory and spend reports to guide purchasing decisions and surface savings',
+            'Resolved invoice discrepancies and enforced purchase order compliance with vendors'
+          ]
         },
         {
           title: 'Customer Service Representative',
@@ -79,18 +90,30 @@
           location: 'Farmers Branch, TX',
           startDate: 'OCT 2010',
           endDate: 'APR 2012',
-          description: 'Provided exceoptional customer service to rental and lease customers for a shop that had over 450 domicile units. Assisted in person and over the phone with driver issues, scheduling, and maintenance needs. Coordinated with maintenance team to ensure timely repairs and maintenance. Monitored technician workloads and scheduled repairs for current and future shifts. Assisted with parts procurement and inventory management.'
+          description: [
+            'Served as the customer-facing link between rental/lease customers and the shop at a location with 450+ domicile units',
+            'Managed PM scheduling, breakdown communication, and vehicle status updates to protect customer satisfaction',
+            'Created repair orders, planned technician workflow, and scheduled current and future shifts',
+            'Coordinated parts ordering, receiving, and inventory levels to keep repairs moving',
+            'Handled incoming shop calls and resolved driver issues in person and by phone'
+          ]
         },
         {
-          title: 'Light Wheeled Vehicle Mechanic | Soldier',
+          title: 'Light Wheeled Vehicle Mechanic',
           company: 'United States Army',
           location: 'Fort Hood, TX',
           startDate: 'MAR 2005',
           endDate: 'NOV 2007',
-          description: 'Performed maintenance and repairs on military vehicles and equipment. Conducted regular inspections and audits to identify areas for improvement. Reviewed repair orders and invoices to ensure accuracy and compliance with budgetary constraints. Assisted with comparison analytics to determine cost-effective solutions for maintenance, repairs, and new truck purchasing. Trained and mentored junior mechanics on proper maintenance procedures and safety protocols.'
+          description: [
+            'Deployed to Iraq from October 2006 to September 2007, performing field-level maintenance and recovery operations in a designated imminent danger area',
+            'Performed field-level maintenance and recovery operations on light and heavy wheeled vehicles, trailers, and material handling equipment',
+            'Diagnosed and repaired powertrain, brake, steering, suspension, hydraulic, and electrical systems including wiring harnesses and starting/charging systems',
+            'Conducted in-process inspections and troubleshooting during engine, transmission, and major assembly overhauls',
+            'Supervised and mentored junior soldiers, enforcing technical manual compliance and shop safety standards'
+          ]
         }
       ],
-      awards: ['National Defense Service Medal', 'Global War on Terrorism Service Medal', 'Army Service Ribbon', 'Overseas Service Ribbon', 'Driver and Mechanic Badge'],
+      awards: ['Iraq Campaign Medal', 'Global War on Terrorism Service Medal', 'National Defense Service Medal', 'Army Service Ribbon', 'Overseas Service Ribbon', 'Driver and Mechanic Badge'],
       education: [
         {
           degree: 'Associate of Applied Science',
@@ -111,7 +134,7 @@
       phone: resume.phone,
       email: resume.email,
       render: function () {
-        $('.header').innerHTML = `<!--Header Grid--><header class="grid-2"><!--Left--><div class="grid-item-1"><h1 id="heading" class="h1">${resume.fName} <span class="text-primary">${resume.lName}</span></h1><p id="subHeading"><strong>${this.subHeading}</strong></p></div><!--Right--><div class="grid-item-2"><p><i class="fa fa-map mr-1"></i>${this.location}</p><p><i class="fa fa-phone mr-1"></i>${this.phone}</p><p><a href="mailto:${this.email}"><i class="fa fa-envelope mr-1"></i>${this.email}</a></p></div></header><!---------------------------------->`;
+        $('.header').innerHTML = `<header class="header-grid"><div class="header-main"><h1 id="heading" class="h1">${resume.fName} <span class="text-primary">${resume.lName}</span></h1><p id="subHeading"><strong>${this.subHeading}</strong></p></div><div class="header-contact"><p><i class="fa fa-map-marker-alt"></i>${this.location}</p><p><i class="fa fa-phone"></i>${this.phone}</p><p><a href="mailto:${this.email}"><i class="fa fa-envelope"></i>${this.email}</a></p></div></header>`;
       }
     };
 
@@ -120,7 +143,7 @@
       heading: 'Summary',
       content: resume.summary,
       render: function () {
-        $('#summary').innerHTML = `<!--Summary--><div><h2 class="h2">${this.heading}</h2><p>${this.content}</p></div><!--Experience-->`;
+        $('#summary').innerHTML = `<div><h2 class="h2">${this.heading}</h2><p class="summary-text">${this.content}</p></div>`;
       }
     };
 
@@ -128,7 +151,7 @@
     const experience = {
       heading: 'Experience',
       render: function () {
-        $('#experience').innerHTML = `<!--Experience--><div><h2 class="h2">${this.heading}</h2><!--Experience Items-->${resume.experience.map((exp) => `<div class="exp-item"><h3>${exp.title}</h3><p><strong>${exp.company}</strong> | ${exp.location}</p><p class="badge badge-primary p-2"><strong>${exp.startDate}</strong> - <strong>${exp.endDate}</strong></p><p>${exp.description}</p></div>`).join('')}</div><!--Contact-->`;
+        $('#experience').innerHTML = `<div><h2 class="h2">${this.heading}</h2>${resume.experience.map((exp) => `<article class="exp-item"><div class="exp-head"><h3>${exp.title}</h3><span class="date-badge"><strong>${exp.startDate}</strong> - <strong>${exp.endDate}</strong></span></div><p class="exp-company"><strong>${exp.company}</strong> <span class="exp-location">| ${exp.location}</span></p><ul class="exp-list">${exp.description.map((d) => `<li>${d}</li>`).join('')}</ul></article>`).join('')}</div>`;
       }
     };
 
@@ -136,7 +159,7 @@
     const education = {
       heading: 'Education',
       render: function () {
-        $('#education').innerHTML = `<!--Education--><div><h2 class="h2">${this.heading}</h2><ul>${resume.education.map((edu) => `<li><strong>${edu.degree}</strong> in ${edu.major} | ${edu.school} | ${edu.location} | ${edu.startDate} - ${edu.endDate}</li>`).join('')}</ul></div><!--Skills-->`;
+        $('#education').innerHTML = `<div><h2 class="h2">${this.heading}</h2><ul class="plain-list">${resume.education.map((edu) => `<li><strong>${edu.degree}</strong> in ${edu.major}<br>${edu.school} | ${edu.location}<br><span class="muted">${edu.startDate} - ${edu.endDate}</span></li>`).join('')}</ul></div>`;
       }
     };
 
@@ -144,7 +167,7 @@
     const skills = {
       heading: 'Skills',
       render: function () {
-        $('#skills').innerHTML = `<!--Skills--><div><h2 class="h2">${this.heading}</h2><ul>${resume.skills.map((skill) => `<li>${skill}</li>`).join('')}</ul></div><!--Awards-->`;
+        $('#skills').innerHTML = `<div><h2 class="h2">${this.heading}</h2><div class="skill-chips">${resume.skills.map((skill) => `<span class="skill-chip">${skill}</span>`).join('')}</div></div>`;
       }
     };
 
@@ -152,7 +175,7 @@
     const awards = {
       heading: 'Awards',
       render: function () {
-        $('#awards').innerHTML = `<!--Awards--><div><h2 class="h2">${this.heading}</h2><ul>${resume.awards.map((award) => `<li>${award}</li>`).join('')}</ul></div>`;
+        $('#awards').innerHTML = `<div><h2 class="h2">${this.heading}</h2><div class="skill-chips">${resume.awards.map((award) => `<span class="skill-chip">${award}</span>`).join('')}</div></div>`;
       }
     };
 
@@ -164,14 +187,23 @@
     skills.render();
     awards.render();
 
-    // Function to print the resume
+    // Function to print the resume (sets a clean filename for "Save as PDF")
     function printResume() {
+      const originalTitle = document.title;
+      document.title = 'Thomas Overstreet - Resume';
       window.print();
+      setTimeout(() => { document.title = originalTitle; }, 500);
     }
 
     // Function to download the resume as a PDF
     function downloadResume() {
       const element = document.getElementById('resume');
-      html2pdf(element);
+      const opt = {
+        margin: [0.4, 0.4, 0.4, 0.4],
+        filename: 'Thomas-Overstreet-Resume.pdf',
+        image: { type: 'jpeg', quality: 0.98 },
+        html2canvas: { scale: 2, useCORS: true },
+        jsPDF: { unit: 'in', format: 'letter', orientation: 'portrait' }
+      };
+      html2pdf().set(opt).from(element).save();
     }
-
