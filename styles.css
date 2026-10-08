@@ -246,34 +246,33 @@ a.contact-card:hover { text-decoration: none; transform: translateY(-2px); box-s
 }
 
 /* =====================================================================
-   PRINT — only the one-page resume sheet prints. Everything else hides.
+   PRINT — the printed page matches the on-screen resume sheet exactly.
+   Only the one-page sheet prints; the rest of the portfolio is hidden.
+   (The sheet uses dark text on white, so nothing depends on the
+   browser's "background graphics" setting.)
    ===================================================================== */
-@page { size: letter; margin: 0.5in 0.55in; }
+@page { size: letter; margin: 0.45in 0.5in; }
 
 @media print {
   .site-nav, .hero, #about, #experience, #skills, #service,
   #faq, #contact, .site-footer, .sticky-bar { display: none !important; }
 
-  body { background: #fff; font-size: 10pt; line-height: 1.45; color: #111; }
+  body { background: #fff; }
 
-  #resume-section { display: block !important; padding: 0; margin: 0; background: #fff; }
+  #resume-section { padding: 0; margin: 0; background: #fff; }
   #resume-section .wrap { max-width: none; padding: 0; }
   #resume-section .section-head-print-hide { display: none !important; }
 
+  /* Keep the sheet's on-screen design intact: same type, colors, spacing */
   #resume-sheet {
-    box-shadow: none; border: none; border-radius: 0;
-    max-width: none; margin: 0; padding: 0;
-    font-size: 9.5pt; line-height: 1.4; color: #111;
-    -webkit-print-color-adjust: economy; print-color-adjust: economy;
+    box-shadow: none;
+    border-radius: 0;
+    max-width: none;
+    margin: 0;
+    padding: 2rem 2.25rem;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
   }
-  .rs-head { border-bottom: 2px solid #111; padding-bottom: 0.4rem; margin-bottom: 0.6rem; }
-  .rs-head h1 { font-size: 20pt; }
-  .rs-tagline { color: #111; }
-  .rs-contact { color: #333; }
-  .rs-section { margin-bottom: 0.55rem; break-inside: avoid; }
-  .rs-section h2 { font-size: 9pt; color: #111; border-bottom: 1px solid #999; margin-bottom: 0.3rem; padding-bottom: 0.15rem; }
-  .rs-job { margin-bottom: 0.4rem; break-inside: avoid; }
-  .rs-job li { margin-bottom: 0.1rem; }
-  .rs-dates { color: #333; }
-  a { color: #111; text-decoration: none; }
+
+  a { text-decoration: none; }
 }
